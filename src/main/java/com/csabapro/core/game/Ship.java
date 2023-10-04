@@ -81,4 +81,12 @@ public class Ship {
         overlapping.retainAll(positions);
         return overlapping;
     }
+
+    /**
+     * Rotates the ship to the other other orientation and recalculates the positions
+     */
+    public void rotate() {
+        orientation = orientation == Orientation.Horizontal ? Orientation.Vertical : Orientation.Horizontal; 
+        positions = generatePositions(startPos, orientation, size);
+    }
 }
