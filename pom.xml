@@ -27,11 +27,6 @@
         <scope>test</scope>
     </dependency>
     </dependencies>
-    
-    <build>
-    <pluginManagement>
-    </pluginManagement>
-    </build>
 
     <distributionManagement>
         <repository>
