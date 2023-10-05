@@ -24,7 +24,7 @@ public class ServerMessage {
     public List<Integer> shipSizes;
     public Integer maxAllowedHits; // this is usually the sum of ship sizes
 
-    ServerMessage() {}
+    private ServerMessage() {}
 
     public static ServerMessage Ack() {
         ServerMessage sm = new ServerMessage();
@@ -99,10 +99,10 @@ public class ServerMessage {
         }
     }
 
-    public Result<ServerMessage, ErrorMessage> deserialize(String message) {
+    public static Result<ServerMessage, ErrorMessage> deserialize(String message) {
         ServerMessage sm = null;
         try {
-            sm = new ObjectMapper().readerFor(this.getClass()).readValue(message);
+            sm = new ObjectMapper().readerFor(ServerMessage.class).readValue(message);
         } catch (Exception e) {
             String deserializerMessage = e.getLocalizedMessage();
             HashMap<String, Object> map = new HashMap<>();
