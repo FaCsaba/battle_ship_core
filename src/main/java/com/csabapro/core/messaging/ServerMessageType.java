@@ -24,6 +24,7 @@ public enum ServerMessageType {
 
     TurnChange,
     SendTorpedoAck,
+    ActionChange,
     ReceiveTorpedo;
 
     public static int ServerMessageTypeCount = 0; 
