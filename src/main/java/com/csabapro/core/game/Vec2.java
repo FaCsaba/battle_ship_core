@@ -37,8 +37,13 @@ public class Vec2 {
         return new Vec2(x, y);
     }
 
+    /**
+     * Is this vector < upperBounds and this vector > 0,0
+     * @param upperBounds exclusive upper bounds
+     * @return
+     */
     public boolean isInBounds(Vec2 upperBounds) {
-        return x > upperBounds.x || y > upperBounds.y || x < 0 || y < 0;
+        return x < upperBounds.x || y < upperBounds.y || x > 0 || y > 0;
     }
 
     public boolean isOverlapping(List<Vec2> otherPositions) {
